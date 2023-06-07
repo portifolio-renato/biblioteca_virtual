@@ -1,0 +1,15 @@
+version: "3"
+services:
+  db-biblioteca-virtual:
+    image: postgres:alpine
+    ports:
+      - "5436:5432"
+    container_name: "db-biblioteca-virtual"
+    restart: always
+    volumes:
+      - ./banco-de-dados-biblioteca-virtual:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: bibliotecaVirtual
+      POSTGRES_PASSWORD: bibliotecaVirtual
+volumes:
+  banco-de-dados-biblioteca-virtual:
